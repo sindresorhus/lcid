@@ -1,19 +1,15 @@
-'use strict';
-var test = require('ava');
-var lcid = require('./');
+import test from 'ava';
+import m from './';
 
-test('.from()', function (t) {
-	t.assert(lcid.from(1044) === 'nb_NO');
-	t.end();
+test('.from()', t => {
+	t.is(m.from(1044), 'nb_NO');
 });
 
-test('.to()', function (t) {
-	t.assert(lcid.to('nb_NO') === 1044);
-	t.end();
+test('.to()', t => {
+	t.is(m.to('nb_NO'), 1044);
 });
 
 test('.all', function (t) {
-	t.assert(typeof lcid.all === 'object');
-	t.assert(lcid.all['nb_NO'] === 1044);
-	t.end();
+	t.is(typeof m.all, 'object');
+	t.is(m.all['nb_NO'], 1044);
 });

@@ -10,14 +10,14 @@ The mapping itself is just a [JSON file](lcid.json) and can be used wherever.
 ## Install
 
 ```
-$ npm install --save lcid
+$ npm install lcid
 ```
 
 
 ## Usage
 
 ```js
-var lcid = require('lcid');
+const lcid = require('lcid');
 
 lcid.from(1044);
 //=> 'nb_NO'
@@ -32,4 +32,4 @@ lcid.all;
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

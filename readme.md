@@ -2,7 +2,7 @@
 
 > Mapping between [standard locale identifiers](https://en.wikipedia.org/wiki/Locale_(computer_software)) and [Windows locale identifiers (LCID)](http://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms)
 
-Based on the [mapping](https://github.com/python/cpython/blob/be2a1a76fa43bb1ea1b3577bb5bdd506a2e90e37/Lib/locale.py#L1395-L1604) used in the Python standard library.
+Based on the [mapping](https://github.com/python/cpython/blob/8f7bb100d0fa7fb2714f3953b5b627878277c7c6/Lib/locale.py#L1465-L1674) used in the Python standard library.
 
 The mapping itself is just a [JSON file](lcid.json) and can be used wherever.
 

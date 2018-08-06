@@ -1,6 +1,6 @@
 {
 	"name": "lcid",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
 	"license": "MIT",
 	"repository": "sindresorhus/lcid",

@@ -4,7 +4,7 @@ const all = require('./lcid.json');
 
 const inverted = invertKv(all);
 
-exports.from = lcidCode => {
+exports.from = function(lcidCode) {
 	if (typeof lcidCode !== 'number') {
 		throw new TypeError('Expected a number');
 	}
@@ -12,7 +12,7 @@ exports.from = lcidCode => {
 	return inverted[lcidCode];
 };
 
-exports.to = localeId => {
+exports.to = function(localeId) {
 	if (typeof localeId !== 'string') {
 		throw new TypeError('Expected a string');
 	}

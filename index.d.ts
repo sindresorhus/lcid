@@ -15,7 +15,7 @@ declare const lcid: {
 	from(lcidCode: number): string;
 
 	/**
-	Get a [Windows locale identifier (LCID)](http://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms) from a [standard locale identifier](https://en.wikipedia.org/wiki/Locale_(computer_software)).
+	Get a [Windows locale identifier (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms) from a [standard locale identifier](https://en.wikipedia.org/wiki/Locale_(computer_software)).
 
 	@example
 	```
@@ -35,7 +35,7 @@ declare const lcid: {
 	import lcid = require('lcid');
 
 	lcid.all;
-	//=> {'af_ZA': 1078, ...}
+	//=> {'af_ZA': 1078, …}
 	```
 	*/
 	readonly all: typeof lcidCodes;

@@ -10,14 +10,16 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
 		"index.js",
-		"lcid.json"
+		"index.d.ts",
+		"lcid.json",
+		"lcid.json.d.ts"
 	],
 	"keywords": [
 		"lcid",
@@ -38,10 +40,11 @@
 		"tag"
 	],
 	"dependencies": {
-		"invert-kv": "^2.0.0"
+		"invert-kv": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"xo": "*"
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
 	}
 }

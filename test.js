@@ -11,5 +11,5 @@ test('.to()', t => {
 
 test('.all', t => {
 	t.is(typeof lcid.all, 'object');
-	t.is(lcid.all.nb_NO, 1044);
+	t.is(lcid.all.nb_NO, '1044');
 });

@@ -23,4 +23,14 @@ exports.to = localeId => {
 	}
 };
 
-exports.all = inverted;
+exports.all = new Proxy(
+	inverted,
+	{
+		get(target, name) {
+			const lcid = target[name];
+			if (lcid) {
+				return Number(lcid);
+			}
+		}
+	}
+);

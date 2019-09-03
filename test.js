@@ -11,5 +11,17 @@ test('.to()', t => {
 
 test('.all', t => {
 	t.is(typeof lcid.all, 'object');
-	t.is(lcid.all.nb_NO, '1044');
+	t.is(lcid.all.nb_NO, 1044);
+});
+
+test('.from(1034) should return Spanish locale', t => {
+	t.is(lcid.from(1034), 'es_ES');
+});
+
+test('.to("es_ES") should return proper Spanish lcid', t => {
+	t.is(lcid.to('es_ES'), 3082);
+});
+
+test('.all should contain the proper lcid for Spanish', t => {
+	t.is(lcid.all.es_ES, 3082);
 });

@@ -9,7 +9,7 @@ exports.from = lcidCode => {
 		throw new TypeError('Expected a number');
 	}
 
-	return inverted[lcidCode];
+	return all[lcidCode];
 };
 
 exports.to = localeId => {
@@ -17,7 +17,20 @@ exports.to = localeId => {
 		throw new TypeError('Expected a string');
 	}
 
-	return all[localeId];
+	const lcidCode = inverted[localeId];
+	if (lcidCode) {
+		return Number(inverted[localeId]);
+	}
 };
 
-exports.all = all;
+exports.all = new Proxy(
+	inverted,
+	{
+		get(target, name) {
+			const lcid = target[name];
+			if (lcid) {
+				return Number(lcid);
+			}
+		}
+	}
+);

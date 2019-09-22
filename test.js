@@ -18,10 +18,10 @@ test('.from(1034) should return Spanish locale', t => {
 	t.is(lcid.from(1034), 'es_ES');
 });
 
-test('.to("es_ES") should return proper Spanish lcid', t => {
+test('.to(\'es_ES\') should return proper Spanish LCID', t => {
 	t.is(lcid.to('es_ES'), 3082);
 });
 
-test('.all should contain the proper lcid for Spanish', t => {
+test('.all should contain the proper LCID for Spanish', t => {
 	t.is(lcid.all.es_ES, 3082);
 });

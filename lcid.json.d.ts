@@ -1,3 +1,3 @@
-declare const lcidCodes: {readonly [localeId: string]: number};
+declare const lcidCodes: {readonly [localeId: string]: string};
 
 export = lcidCodes;

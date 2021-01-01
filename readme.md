@@ -1,4 +1,4 @@
-# lcid [![Build Status](https://travis-ci.org/sindresorhus/lcid.svg?branch=master)](https://travis-ci.org/sindresorhus/lcid)
+# lcid
 
 > Mapping between [standard locale identifiers](https://en.wikipedia.org/wiki/Locale_(computer_software)) and [Windows locale identifiers (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms)
 

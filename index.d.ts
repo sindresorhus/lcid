@@ -6,7 +6,7 @@ declare const lcid: {
 
 	@example
 	```
-	import lcid = require('lcid');
+	import lcid from 'lcid';
 
 	lcid.from(1044);
 	//=> 'nb_NO'
@@ -19,7 +19,7 @@ declare const lcid: {
 
 	@example
 	```
-	import lcid = require('lcid');
+	import lcid from 'lcid';
 
 	lcid.to('nb_NO');
 	//=> 1044
@@ -32,7 +32,7 @@ declare const lcid: {
 
 	@example
 	```
-	import lcid = require('lcid');
+	import lcid from 'lcid';
 
 	lcid.all;
 	//=> {'af_ZA': 1078, …}

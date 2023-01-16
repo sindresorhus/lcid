@@ -12,7 +12,7 @@ declare const lcid: {
 	//=> 'nb_NO'
 	```
 	*/
-	from(lcidCode: number): string;
+  from(lcidCode: number): string | undefined;
 
 	/**
 	Get a [Windows locale identifier (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms) from a [standard locale identifier](https://en.wikipedia.org/wiki/Locale_(computer_software)).
@@ -25,7 +25,7 @@ declare const lcid: {
 	//=> 1044
 	```
 	*/
-	to(localeId: string): number;
+  to(localeId: string): number | undefined;
 
 	/**
 	Mapping between [standard locale identifiers](https://en.wikipedia.org/wiki/Locale_(computer_software)) and [Windows locale identifiers (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms).

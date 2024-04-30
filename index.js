@@ -1,10 +1,11 @@
-'use strict';
-const invertKv = require('invert-kv');
-const all = require('./lcid.json');
+import invertKv from 'invert-kv';
+import all from './lcid.json' with {type: 'json'};
 
 const inverted = invertKv(all);
 
-exports.from = lcidCode => {
+const lcid = {};
+
+lcid.from = lcidCode => {
 	if (typeof lcidCode !== 'number') {
 		throw new TypeError('Expected a number');
 	}
@@ -12,7 +13,7 @@ exports.from = lcidCode => {
 	return all[lcidCode];
 };
 
-exports.to = localeId => {
+lcid.to = localeId => {
 	if (typeof localeId !== 'string') {
 		throw new TypeError('Expected a string');
 	}
@@ -23,7 +24,7 @@ exports.to = localeId => {
 	}
 };
 
-exports.all = new Proxy(
+lcid.all = new Proxy(
 	inverted,
 	{
 		get(target, name) {
@@ -34,3 +35,5 @@ exports.all = new Proxy(
 		}
 	}
 );
+
+export default lcid;

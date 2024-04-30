@@ -1,5 +1,5 @@
 import test from 'ava';
-import lcid from '.';
+import lcid from './index.js';
 
 test('.from()', t => {
 	t.is(lcid.from(1044), 'nb_NO');

@@ -10,21 +10,23 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
 	"exports": {
 		"types": "./index.d.ts",
 		"default": "./index.js"
 	},
+	"sideEffects": false,
 	"engines": {
-		"node": ">=14.16"
+		"node": ">=18.20"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"//test": "xo && ava && tsc --noEmit index.d.ts",
+		"test": "ava && tsc --noEmit index.d.ts"
 	},
 	"files": [
 		"index.js",
 		"index.d.ts",
-		"lcid.json",
-		"lcid.json.d.ts"
+		"lcid.json"
 	],
 	"keywords": [
 		"lcid",
@@ -44,17 +46,11 @@
 		"tag"
 	],
 	"dependencies": {
-		"invert-kv": "^3.0.0"
+		"invert-kv": "^4.2.0"
 	},
 	"devDependencies": {
-		"ava": "^1.4.1",
-		"tsd": "^0.7.2",
-		"xo": "^0.24.0"
-	},
-	"xo": {
-		"rules": {
-			"import/extensions": "off",
-			"import/no-unresolved": "off"
-		}
+		"ava": "^6.1.2",
+		"tsd": "^0.31.0",
+		"xo": "^0.58.0"
 	}
 }

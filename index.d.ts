@@ -1,4 +1,4 @@
-import lcidCodes = require('./lcid.json');
+// import lcidCodes from './lcid.json'; // TODO: Use `with` here when TypeScript supports it.
 
 declare const lcid: {
 	/**
@@ -13,6 +13,19 @@ declare const lcid: {
 	```
 	*/
 	from(lcidCode: number): string | undefined;
+
+	/**
+	Get a [standard locale identifier](https://en.wikipedia.org/wiki/Locale_(computer_software)) from a [Windows locale identifier (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms).
+
+	@example
+	```
+	import lcid from 'lcid';
+
+	lcid.from(1044);
+	//=> 'nb_NO'
+	```
+	*/
+	// from(lcidCode: keyof typeof lcidCodes): string;
 
 	/**
 	Get a [Windows locale identifier (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms) from a [standard locale identifier](https://en.wikipedia.org/wiki/Locale_(computer_software)).
@@ -38,7 +51,8 @@ declare const lcid: {
 	//=> {'af_ZA': 1078, …}
 	```
 	*/
-	readonly all: typeof lcidCodes;
+	readonly all: Record<string, number>;
+	// TODO: readonly all: typeof lcidCodes;
 };
 
-export = lcid;
+export default lcid;

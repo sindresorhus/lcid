@@ -7,7 +7,7 @@ The mapping itself is just a [JSON file](lcid.json) and can be used anywhere.
 ## Install
 
 ```sh
-$ npm install lcid
+npm install lcid
 ```
 
 ## Usage

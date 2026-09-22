@@ -18,9 +18,17 @@ lcid.to = localeId => {
 		throw new TypeError('Expected a string');
 	}
 
-	const lcidCode = inverted[localeId];
+	// Exact match first, so distinct `gd-GB` / `gd_GB` entries can coexist.
+	let lcidCode = inverted[localeId];
 	if (lcidCode) {
-		return Number(inverted[localeId]);
+		return Number(lcidCode);
+	}
+
+	// Accept both `en_US` (legacy) and `en-US` (BCP 47) forms.
+	// Most data is stored with underscores, so normalize hyphens as fallback.
+	lcidCode = inverted[localeId.replaceAll('-', '_')];
+	if (lcidCode) {
+		return Number(lcidCode);
 	}
 };
 
@@ -28,10 +36,28 @@ lcid.all = new Proxy(
 	inverted,
 	{
 		get(target, name) {
-			const lcid = target[name];
+			let lcid = target[name];
 			if (lcid) {
 				return Number(lcid);
 			}
+
+			if (typeof name === 'string' && name.includes('-')) {
+				lcid = target[name.replaceAll('-', '_')];
+				if (lcid) {
+					return Number(lcid);
+				}
+			}
+		},
+		has(target, name) {
+			if (name in target) {
+				return true;
+			}
+
+			if (typeof name === 'string' && name.includes('-')) {
+				return name.replaceAll('-', '_') in target;
+			}
+
+			return false;
 		}
 	}
 );
